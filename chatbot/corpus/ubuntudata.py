@@ -14,8 +14,8 @@
 # ==============================================================================
 
 import os
-
 from tqdm import tqdm
+import io
 
 """
 Ubuntu Dialogue Corpus
@@ -57,7 +57,7 @@ class UbuntuData:
             list<dict<str>>: the extracted fields for each line
         """
         lines = []
-        with open(fileName, 'r') as f:
+        with io.open(fileName, encoding='utf8') as f:
             for line in f:
                 l = line[line.rindex("\t")+1:].strip()  # Strip metadata (timestamps, speaker names)
 

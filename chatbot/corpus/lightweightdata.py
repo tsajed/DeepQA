@@ -14,6 +14,7 @@
 # ==============================================================================
 
 import os
+import io
 
 """
 Load data from a dataset of simply-formatted data
@@ -56,7 +57,7 @@ class LightweightData:
         """
 
         linesBuffer = []
-        with open(fileName, 'r') as f:
+        with io.open(fileName,  encoding='utf8') as f:
             for line in f:
                 l = line.strip()
                 if l == self.CONVERSATION_SEP:
